@@ -18,7 +18,7 @@
 * **多模型支援**：CTC-Based (Wav2Vec2)、Transformer Seq2Seq、Whisper + LoRA 微調
 * **高效訓練**：混合精度 (AMP)、LoRA 參數高效微調、Accelerate 分散式訓練
 * **易用部署**：Hugging Face Hub / Spaces 一鍵上傳、Dockerfile
-* **開放原始碼**：Apach 2.0，歡迎學術與非商業用途
+* **開放原始碼**：Apache 2.0，歡迎學術與非商業用途
 
 ---
 
@@ -199,7 +199,7 @@ print("生成文本：", transcription)
 
 ## 📜 授權條款
 
-* **程式碼**：MIT License ([LICENSE](./LICENSE))
+* **程式碼**：Apache 2.0 License ([LICENSE](./LICENSE))
 * **語料資料**：依據中華民國教育部《臺灣閩南語常用詞辭典》CC BY-ND 3.0 TW 條款，僅用於學術研究與非商業用途
 
 ---
