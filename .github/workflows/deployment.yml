@@ -49,9 +49,30 @@ jobs:
             -d '{
               "username": "DeployBot",
               "avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+              "content": "我們的KikKoh似乎又幹了甚麼，快去看看吧👇",
               "embeds": [{
                 "title": "✅ 已部署到 Hugging Face",
                 "description": "新版本已成功部署：\n🔗 https://huggingface.co/spaces/KikKoh/Hokkien",
-                "color": 3066993
+                "color": 3066993,
+                "fields": [
+                  {
+                    "name": "🔀 分支",
+                    "value": "${{ github.ref_name }}",
+                    "inline": true
+                  },
+                  {
+                    "name": "👤 作者",
+                    "value": "${{ github.actor }}",
+                    "inline": true
+                  },
+                  {
+                    "name": "🧬 Commit",
+                    "value": "[${{ github.sha }}](https://github.com/${{ github.repository }}/commit/${{ github.sha }})"
+                  }
+                ],
+                "footer": {
+                  "text": "Tai-Gi STT 自動部署通知"
+                },
+                "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%SZ)'"
               }]
             }'
