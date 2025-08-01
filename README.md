@@ -6,7 +6,26 @@
 
 ---
 
-## 🎯 專案亮點
+
+## 📚 目錄
+
+* [🎯 專案亮點](#專案亮點)
+* [📂 專案結構](#專案結構)
+* [📥 安裝與環境準備](#安裝與環境準備)
+* [🚀 快速上手](#快速上手)
+
+  * [語音 ➜ 羅馬拼音](#1推論:語音--羅馬拼音)
+  * [拼音 ➜ 台語漢字](#2推論:拼音--台語漢字)
+  * [Whisper + LoRA 中文模式](#3推論:whisper--lora(zh))
+* [🛠️ 自訂訓練](#自訂訓練)
+* [🤝 貢獻指南](#貢獻指南)
+* [📁 資料來源與授權](#資料來源與授權)
+* [📜 授權條款](#授權條款)
+* [✉️ 聯絡方式](#聯絡方式)
+
+---
+
+## 專案亮點
 
 * **雙階段架構**：
 
@@ -22,7 +41,7 @@
 
 ---
 
-## 📂 專案結構
+## 專案結構
 
 ```
 taiwanese-speech-to-text/
@@ -45,7 +64,7 @@ taiwanese-speech-to-text/
 
 ---
 
-## 📥 安裝與環境準備
+## 安裝與環境準備
 
 1. **Clone 專案**
 
@@ -74,9 +93,9 @@ taiwanese-speech-to-text/
 
 ---
 
-## 🚀 快速上手
+## 快速上手
 
-### 1. 推論：語音 ➜ 羅馬拼音
+### 1推論:語音--羅馬拼音
 
 ```python
 from transformers import Wav2Vec2ForCTC, Wav2Vec2Processor
@@ -106,7 +125,7 @@ romaji = processor.batch_decode(pred_ids)
 print("羅馬拼音：", romaji)
 ```
 
-### 2. 推論：拼音 ➜ 台語漢字
+### 2推論:拼音--台語漢字
 
 ```python
 from transformers import AutoTokenizer
@@ -144,7 +163,7 @@ translation = output_tokenizer.decode(tgt_ids[0], skip_special_tokens=True).repl
 print("台語漢字：", translation)
 ```
 
-### 3. 推論：Whisper + LoRA(zh)
+### 3. 3推論:whisper--lora(zh)
 
 ```python
 from peft import PeftModel
@@ -175,7 +194,7 @@ print("生成文本：", transcription)
 
 ---
 
-## 🛠️ 自訂訓練
+## 自訂訓練
 
 各子模組已提供完整 `README.md`，範例訓練流程包含：
 
@@ -187,7 +206,7 @@ print("生成文本：", transcription)
 
 ---
 
-## 🤝 貢獻指南
+## 貢獻指南
 
 歡迎台語愛好者、語音處理研究者、AI 開發者參與：
 
@@ -197,14 +216,28 @@ print("生成文本：", transcription)
 
 ---
 
-## 📜 授權條款
+## 資料來源
 
-* **程式碼**：Apache 2.0 License ([LICENSE](./LICENSE))
-* **語料資料**：依據中華民國教育部[《臺灣閩南語常用詞辭典》](https://sutian.moe.edu.tw/zh-hant/) CC BY-ND 3.0 TW 條款，僅用於學術研究與非商業用途
+本專案所使用之語音與詞條文字資料來自：
+
+- 教育部《臺灣台語常用詞辭典》
+- 官方網站：[https://sutian.moe.edu.tw/](https://sutian.moe.edu.tw/)
+- 授權條款：創用 CC 姓名標示－禁止改作 3.0 台灣（CC BY-ND 3.0 TW）  
+  條款說明：[https://creativecommons.org/licenses/by-nd/3.0/tw/](https://creativecommons.org/licenses/by-nd/3.0/tw/)
+
+> ⚠ 本專案所提供之「文字與音檔」資料**未經改作**，僅用於學術研究、非商業用途。
+> 原始資料版權屬於 **中華民國教育部** 所有。
 
 ---
 
-## ✉️ 聯絡方式
+## 授權條款
+
+* **程式碼**：Apache 2.0 License ([LICENSE](./LICENSE))
+* **語料資料**：依據中華民國教育部[《臺灣閩南語常用詞辭典》](https://sutian.moe.edu.tw/zh-hant/) [CC BY-ND 3.0 TW](https://creativecommons.org/licenses/by-nd/3.0/tw/) 條款，僅用於學術研究與非商業用途
+
+---
+
+## 聯絡方式
 
 如有疑問，請透過 GitHub Issue 或私訊聯絡：
 
