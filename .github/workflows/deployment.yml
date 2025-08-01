@@ -1,0 +1,34 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Create deployment
+        id: create_deployment
+        uses: peter-evans/create-or-update-deployment@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: production
+          ref: main
+          transient_environment: false
+          auto_merge: false
+          required_contexts: ''
+          payload: '{"deploy_url":"https://huggingface.co/spaces/KikKoh/Hokkien"}'
+
+      - name: Set deployment status to success
+        uses: peter-evans/create-deployment-status@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          deployment_id: ${{ steps.create_deployment.outputs.deployment_id }}
+          state: success
+          environment_url: https://huggingface.co/spaces/KikKoh/Hokkien
+          description: Deployed to Hugging Face Spaces
