@@ -42,7 +42,7 @@ jobs:
 
       - name: Notify Discord
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
           curl -X POST "$DISCORD_WEBHOOK" \
             -H "Content-Type: application/json" \
