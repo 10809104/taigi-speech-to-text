@@ -1,0 +1,23 @@
+name: Fake Deployment to Hugging Face
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fake Deploy to Hugging Face
+        run: echo "This is a placeholder deployment."
+
+      - name: Mark deployment as successful
+        uses: bobheadxi/deployments@v1
+        with:
+          step: finish
+          status: success
+          token: ${{ secrets.GITHUB_TOKEN }}
+          env: huggingface
+          env_url: https://huggingface.co/spaces/KikKoh/Hokkien
