@@ -200,7 +200,7 @@ print("生成文本：", transcription)
 ## 📜 授權條款
 
 * **程式碼**：Apache 2.0 License ([LICENSE](./LICENSE))
-* **語料資料**：依據中華民國教育部《臺灣閩南語常用詞辭典》CC BY-ND 3.0 TW 條款，僅用於學術研究與非商業用途
+* **語料資料**：依據中華民國教育部[《臺灣閩南語常用詞辭典》](https://sutian.moe.edu.tw/zh-hant/) CC BY-ND 3.0 TW 條款，僅用於學術研究與非商業用途
 
 ---
 
