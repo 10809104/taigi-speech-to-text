@@ -39,3 +39,19 @@ jobs:
               environment_url: 'https://huggingface.co/spaces/KikKoh/Hokkien',
               description: 'Deployed to Hugging Face Spaces',
             });
+
+      - name: Notify Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          curl -X POST "$DISCORD_WEBHOOK" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "username": "DeployBot",
+              "avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+              "embeds": [{
+                "title": "✅ 已部署到 Hugging Face",
+                "description": "新版本已成功部署：\n🔗 https://huggingface.co/spaces/KikKoh/Hokkien",
+                "color": 3066993
+              }]
+            }'
