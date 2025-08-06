@@ -1,0 +1,10 @@
+{
+  "num_encoder_tokens": 99,
+  "num_decoder_tokens": 21612,
+  "emb_size": 512,
+  "nhead": 8,
+  "num_encoder_layers": 6,
+  "num_decoder_layers": 6,
+  "dim_feedforward": 2048,
+  "dropout": 0.1
+}
